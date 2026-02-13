@@ -9,22 +9,33 @@
 </head>
 <body>
     <div class="container" id="container">
-        <div class="image">
+        <div class="image show">
             <button onclick="run()"><img src="image/love.png"></button>
         </div>
 
-        <div class="text" id="topLeft">
-            <p>"Valentine" yang katanya hari kasih sayang, tapi untukku tidak ada hari tanpa rasa kasih sayang untukmu</p>
-        </div>
-        <div class="text" id="topRight">
-            <p>Kamu akan tetap dihati dengan segala isinya senang maupun sedihnya, kemanisan tiada tara yang kudapatkan tiap harinya diberikan langsung dari sumbernya yang pada akhirnya menjadi milikku</p>
-        </div>
-        <div class="text" id="bottomLeft">
-            <p>Dari begitu banyaknya kata maaf tidak ada rasa bosan yang akan pernah memengaruhi kita, kekuatan hati yang tidak ada tandingannya menghancurkan segala prasangka yang akan merusak segalanya, terimakasih sudah selalu berusaha kuat</p>
-        </div>
-        <div class="text" id="bottomRight">
-            <p>Ingatlah untuk menjadi dirimu sendiri selalu karena itulah yang membuatku jatuh cinta padamu, tetap dengan rasa yang sama dan terbukalah soal rasa itu</p>
-        </div>
+       <div class="matahari">
+            <button onclick="matahari()"><img src="image/sun.png"></button>
+       </div>
+
+       <div class="bulan">
+            <button onclick="bulan()"><img src="image/bulan.png"></button>
+       </div>
+
+       <div class="judul">
+            <h1 id="judul"></h1>
+       </div>
+
+       <div class="keluar">
+            <input type="button" value="❌" id="keluar" onclick="reset()">
+       </div>
+
+       <div class="text">
+            <input type="button" value="" onclick="gantiKiri()" class="btnKiri">
+            <input type="button" value="" onclick="gantiKanan()" class="btnKanan">
+            <p id="isi">hadirmu selaluku tunggu <br> hadir yang menjanjikan terangnya jalan pulang <br></p>
+            
+                
+       </div>
     </div>
 </body>
 </html>

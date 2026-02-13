@@ -13,6 +13,14 @@ body{
         linear-gradient(rgba(236, 255, 131, 0.158), rgba(222, 253, 85, 0.178)),
         url(image/bgKayaknya.png) repeat;
     background-size: 300px 300px;
+
+}
+
+.bgDark{
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.116), rgba(0, 0, 0, 0.116)),
+        url(image/bgDark.png);
+    background-size: 1920px 1080px;
 }
 
 .image{
@@ -20,6 +28,7 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    opacity: 0;
 }
 
 .image img{
@@ -33,98 +42,198 @@ body{
     border: none;
 }
 
-.text{
+.judul{
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    color: aliceblue;
+
+    opacity: 0;
+    transition: 4s;
+}
+
+.matahari{
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -1;
 
-    display: flex;
-    align-items: center;
-
-    height: 250px;
-    width: 300px;
-
-    background: url(image/textbg.png) no-repeat;
-    background-size: 340px 270px;
-    padding: 10px 20px;
-    box-shadow: 2px 2px 10px rgba(255, 108, 108, 0.137);
-
-    font-size: 1em;
-    font-family: Allan;
-    text-align: justify;
     opacity: 0;
 }
 
-.topLeft{
-    animation: topLeft 3s forwards;
+.bulan{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: -1;
+
+    opacity: 0;
 }
 
-.topRight{
-    animation: topRight 3s forwards;
+.matahari img{
+    height: 550px;
 }
 
-.bottomLeft{
-    animation: bottomLeft 3s forwards;
+.matahari button{
+    background: none;
+    border: none;
 }
 
-.bottomRight{
-    animation: bottomRight 3s forwards;
+.bulan img{
+    height: 400px;
 }
 
-@keyframes topLeft{
+.bulan button{
+    background: none;
+    border: none;
+}
+
+.text{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: -1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width:  600px;
+    height: 500px;
+
+    background: url(image/textbg.png);
+
+    border-radius: 20px;
+
+    opacity: 0;
+    transition: 4s;
+}
+
+.text p{
+    width: 500px;
+    height: 300;
+    text-align: center;
+
+    transform: translate(0px, -50px);
+
+    font-size: 1.2em;
+    font-family: Allan;
+
+    border-radius: 20px;
+    color: rgb(194, 255, 157);
+
+}
+
+.btnKanan{
+    position: absolute;
+    width:  50%;
+    right:0;
+    height: 100%;
+    background: none;
+    border: none;
+    z-index: 1;
+}
+
+.btnKiri{
+    position: absolute;
+    width:  50%;
+    left:0;
+    height: 100%;
+    background: none;
+    border: none;
+    z-index: 1;
+}
+
+.keluar{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+
+    opacity: 0;
+}
+.keluar input{
+    font-size: 3em;
+    size: 100%;
+    background: none;
+    border: none;
+}
+
+.show{
+    opacity: 1;
+}
+
+.kiri{
+    animation: kiri 2s forwards;
+}
+
+.kanan{
+    animation: kanan 2s forwards;
+}
+
+.pojok{
+    animation: pojok 2s forwards;
+}
+
+.geser{
+    animation: geser 2s forwards;
+}
+
+
+
+
+@keyframes kiri{
     0%{
 
     }
     50%{
-        transform: translate(-450px, -300px);
         opacity: 1;
     }
     100%{
-        transform: translate(-700px, -450px);
+        transform: translate(calc(-50% - 600px), -50%);
         opacity: 1;
     }
 }
 
-@keyframes topRight{
+@keyframes kanan{
     0%{
 
     }
     50%{
-        transform: translate(150px, -300px);
         opacity: 1;
     }
     100%{
-        transform: translate(390px, -450px);
+        transform: translate(calc(-50% + 550px), -50%);
         opacity: 1;
     }
 }
 
-@keyframes bottomLeft{
+@keyframes pojok{
     0%{
-
+        /* transform: translate(calc(-50% - 600px), -50%); */
     }
     50%{
-        transform: translate(-450px, 200px);
+        transform: translate(calc(-50% - 600px), -50%) scale(0.2);
         opacity: 1;
     }
     100%{
-        transform: translate(-700px, 200px);
+        transform: translate(calc(-50% - 880px), calc(-50% - 450px)) scale(0.2);
         opacity: 1;
     }
 }
 
-@keyframes bottomRight{
+@keyframes geser{
     0%{
-
     }
     50%{
-        transform: translate(150px, 200px);
-        opacity: 1;
+        opacity: 0.8;
     }
     100%{
-        transform: translate(390px, 200px);
-        opacity: 1;
+        transform: translate(calc(-50% + 1500px), calc(-50%));
+        opacity: 0;
     }
 }
