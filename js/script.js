@@ -33,6 +33,20 @@ text = document.getElementsByClassName("text")[0]
 judul = document.getElementsByClassName("judul")[0]
 keluar = document.getElementsByClassName("keluar")[0]
 
+function checkBoth() {
+  if (bulanElement.classList.contains("sudah") &&
+      matahariElement.classList.contains("sudah")) {
+
+    console.log("BOTH DONE");
+
+    matahariElement.classList.remove("show");
+    bulanElement.classList.remove("show");
+
+    document.getElementById("btnMatahari").disabled = true;
+    document.getElementById("btnBulan").disabled = true;
+  }
+}
+
 function run(){
   matahariElement.classList.add("kiri")
 
@@ -72,6 +86,8 @@ function reset(){
     matahariElement.classList.remove("show")
     bulanElement.classList.remove("show")
     document.getElementsByClassName("penyampaian")[0].classList.add("show")
+    document.getElementById("btnMatahari").disabled = true
+    document.getElementById("btnBulan").disabled = true;
   }
 }
 
@@ -98,6 +114,7 @@ function matahari(){
   document.getElementById("isi").innerHTML = puisiMata[i]
 
   matahariElement.classList.add("sudah")
+  checkBoth()
 }
 
 function bulan(){
@@ -122,6 +139,7 @@ function bulan(){
   document.getElementById("isi").innerHTML = puisiBulan[i]
 
   bulanElement.classList.add("sudah")
+  checkBoth()
 }
 
 function gantiKanan(){
@@ -192,7 +210,7 @@ async function Lanjut(){
   if (k > 2) k = 2;
   document.getElementById("asli").innerHTML = BulanMatahari[k]
   console.log(k)
-  await sleep(1000)
+  await sleep(2000)
   if (k == 2){
     window.location.href = "akhir.html"
   }

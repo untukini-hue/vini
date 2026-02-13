@@ -51,7 +51,7 @@ body{
     color: aliceblue;
 
     opacity: 0;
-    transition: 4s;
+    transition: 2s;
 }
 
 .matahari{
@@ -111,7 +111,7 @@ body{
     border-radius: 20px;
 
     opacity: 0;
-    transition: 4s;
+    transition: 2s;
 }
 
 .text p{
