@@ -5,7 +5,39 @@
 
 body{
     background: 
-        linear-gradient(rgba(0, 0, 0, 0.116), rgba(0, 0, 0, 0.116)),
+        linear-gradient(rgba(0, 0, 0, 0.795), rgba(0, 0, 0, 0.116)),
         url(../image/bgDark.png);
     background-size: 1920px 1080px;
+}
+
+.credits {
+  position: absolute;
+  bottom: -100%;
+  width: 100%;
+  text-align: center;
+  font-size: 28px;
+  line-height: 2;
+  animation: scrollUp 25s linear forwards;
+  color: white;
+}
+
+h1 {
+  font-size: 50px;
+  margin-bottom: 40px;
+}
+
+.role {
+  font-size: 22px;
+  color: gray;
+}
+
+.name {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+@keyframes scrollUp {
+  from { bottom: -100%; }
+  to { bottom: 100%; }
 }
